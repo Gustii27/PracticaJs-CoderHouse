@@ -82,7 +82,7 @@ function idUser(id){
 }*/
 
 // Creo una variable global para que me sume solo los id.
-let idCount = 0;
+/*let idCount = 0;
 
 // Solicito al usuario cargar la información solicitada.
 let userName = (prompt("Ingrese su nombre"));
@@ -104,4 +104,37 @@ class Usuario {
 // Asigno los valores ingresados por el usuario en un objeto para almacenar.
 const usuario1 = new Usuario(userName, userApellido, userMail, userMsg, idCount)
 
-console.log(usuario1);
+console.log(usuario1);*/
+
+// ALTERNATIVA UTILIZANDO ARRAY 
+
+// Crear un array vacio para almacenar los usuarios
+let usuarios = [];
+
+// Variable global para llevar la cuenta del ultimo ID utilizado
+let ultimoId = 0;
+
+// Defino la clase Usuario
+class Usuario {
+    constructor(nombre, apellido, mail, msg, id) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.msg = msg;
+        this.id = id;
+    }
+}
+
+// Solicitar al usuario cargar la informacion solicitada.
+let userName = (prompt("Ingrese su nombre"));
+let userApellido = (prompt("Ingrese su apellido"));
+let userMail = (prompt("Ingrese su correo electrónico"));
+let userMsg = (prompt("Ingrese su mensaje"));
+
+// Crear una instancia del objeto Usuario y asignarle un ID único
+const usuario1 = new Usuario(userName, userApellido, userMail, userMsg, ++ultimoId);
+
+// Agregar el nuevo usuario al array usuarios
+usuarios.push(usuario1);
+
+console.log(usuarios);

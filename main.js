@@ -1,4 +1,6 @@
-const listaProductos = [
+// EJERCITACIÓN 1: SUMA DE PRODUCTOS INGRESADOS POR EL USUARIO
+
+/*const listaProductos = [
     {
         id: 1,
         nombre: "Tijera",
@@ -56,4 +58,50 @@ function sumaDePrecios (consultaUser, consultaUser2, listaProductos){
 
 let resultado = sumaDePrecios(consultaUser, consultaUser2, listaProductos);
 
-console.log(`El precio total de los productos con id ${consultaUser} y ${consultaUser2} es de ${resultado} pesos`);
+console.log(`El precio total de los productos con id ${consultaUser} y ${consultaUser2} es de ${resultado} pesos`);*/
+
+// EJERCITACIÓN 2: INGRESO A UN ARRAY DE NUEVOS CLIENTES
+
+// Creo un array de objetos vacio para que se complete con una función a medida que el usuario ingresa datos.
+/*const nuevosUsuarios = [{
+}];
+
+// Solicito al usuario cargar la información solicitada.
+let userName = prompt("Ingrese su nombre");
+let userApellido = prompt("ingrese su apellido");
+let userEmail = prompt("Ingrese su correo electrónico");
+let userMsg = parseInt(prompt("Ingrese su mensaje"));
+
+
+// A traves de una función hago que al momento de encontrar un id genere un incremento automático.
+function idUser(id){
+    nuevosUsuarios.some(encontrado =>{
+        encontrado.id === 1;
+    return id++;    
+    })
+}*/
+
+// Creo una variable global para que me sume solo los id.
+let idCount = 0;
+
+// Solicito al usuario cargar la información solicitada.
+let userName = (prompt("Ingrese su nombre"));
+let userApellido = (prompt("ingrese su apellido"));
+let userMail = (prompt("Ingrese su correo electrónico"));
+let userMsg = (prompt("Ingrese su mensaje"));
+
+// Creo una clase constructora para que me vaya creando el registro de usuarios ingresados.
+class Usuario {
+    constructor(nombre, apellido, mail, msg) {
+        this.id = ++idCount;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.msg = msg;
+    }
+}
+
+// Asigno los valores ingresados por el usuario en un objeto para almacenar.
+const usuario1 = new Usuario(userName, userApellido, userMail, userMsg, idCount)
+
+console.log(usuario1);
